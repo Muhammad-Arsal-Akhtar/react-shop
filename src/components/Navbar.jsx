@@ -75,7 +75,7 @@ const Navbar = () => {
       
               {/* Navigation Links (Below Top Section) */}
               <div className="mt-3 flex justify-center space-x-8 border-t pt-3">
-                <Link href="#" className="text-gray-700 font-medium hover:text-blue-600">
+                <Link to="/" className="text-gray-700 font-medium hover:text-blue-600">
                   Home
                 </Link>
                 <Link href="#" className="text-gray-700 font-medium hover:text-blue-600">
