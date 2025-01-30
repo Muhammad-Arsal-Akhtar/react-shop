@@ -1,9 +1,12 @@
 import { Link } from "react-router";
 import { Categories } from "../assets/sampleData";
 import Carousel from "../assets/images/carousel.jpg"
+import InfoSection from "../components/InfoSection";
+import CategorySection from "../components/CategorySection";
 
 const Home = () => {
     return (
+      <>
         <section className="flex flex-col md:flex-row items-center justify-between p-6 md:p-12 bg-gray-100 mt-16">
           {/* Categories */}
           <div className="w-full md:w-1/4 space-y-4 pt-10">
@@ -25,6 +28,10 @@ const Home = () => {
             />
           </div>
         </section>
+        <InfoSection />
+        <CategorySection />
+
+        </>
       );
   };
 
