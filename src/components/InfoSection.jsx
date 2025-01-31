@@ -10,32 +10,32 @@ const InfoSection = () => {
   const infoCardData = [
 
     {
-      title: "Refreshing Design",
-      details: "We dejoy working with discerning clients, people for whom qualuty, service, integrity & aesthetics.",
+      title: "Free Shipping",
+      details: "Get your Order without costs.",
       icon: <FaShippingFast />
     },
 
     {
-      title: "Refreshing Design",
-      details: "We dejoy working with discerning clients, people for whom qualuty, service, integrity & aesthetics.",
+      title: "Support 24/7",
+      details: "We are available anytime for you.",
       icon: <MdSupportAgent />
     },
 
     {
-      title: "Refreshing Design",
-      details: "We dejoy working with discerning clients, people for whom qualuty, service, integrity & aesthetics.",
+      title: "100% Money Back",
+      details: "Full Refund if you are not satisfied",
       icon: <FaMoneyBillAlt />
     },
 
     {
-      title: "Refreshing Design",
-      details: "We dejoy working with discerning clients, people for whom qualuty, service, integrity & aesthetics.",
+      title: "Payment Secure",
+      details: "YOur Payment info is safe with us.",
       icon: <RiSecurePaymentLine />
     },
 
     {
-      title: "Refreshing Design",
-      details: "We dejoy working with discerning clients, people for whom qualuty, service, integrity & aesthetics.",
+      title: "Discount",
+      details: "Enjoy the best prices on our product.",
       icon: <MdDiscount />
     },
 
@@ -62,7 +62,7 @@ const InfoSection = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 px-4">
           {infoCardData.map((elem, index) => (
             <ServiceCard
               key={`info-${index}`}
@@ -71,7 +71,6 @@ const InfoSection = () => {
               icon={elem.icon}
             />
           ))}
-
         </div>
       </div>
     </section>
