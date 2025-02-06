@@ -17,8 +17,7 @@ const Home = () => {
 
   useEffect(()=>{
     dispatch(setProducts(homeProduct))
-    console.log(productData, 'productData')
-  }, [dispatch, productData])
+  }, [])
 
 
     return (
