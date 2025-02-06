@@ -3,8 +3,22 @@ import { Categories } from "../assets/sampleData";
 import Carousel from "../assets/images/carousel.jpg"
 import InfoSection from "../components/InfoSection";
 import CategorySection from "../components/CategorySection";
+import { useSelector, useDispatch } from "react-redux";
+import { ProductCard } from "../components/ProductCard";
+import { useEffect } from "react";
+import { setProducts } from "../redux/productSlice";
+import {homeProduct} from "../assets/sampleData";
+
 
 const Home = () => {
+
+  const dispatch = useDispatch();
+  const productData = useSelector(state => state.products)
+
+  useEffect(()=>{
+    dispatch(setProducts(homeProduct))
+  }, [])
+
     return (
       <>
         <section className="flex flex-col md:flex-row items-center justify-between p-6 md:p-12 bg-gray-100 mt-16">
@@ -31,6 +45,11 @@ const Home = () => {
         <InfoSection />
         <CategorySection />
 
+          {productData.map((elem, index)=>{
+
+            <ProductCard key={index} productData={elem} />
+
+          }) }
         </>
       );
   };

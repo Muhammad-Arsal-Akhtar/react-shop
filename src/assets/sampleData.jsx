@@ -29,14 +29,14 @@ export const homeProduct = [
     },
 
     {
-        id : 2,
+        id : 3,
         name : 'Black long dress',
         imageUrl : Image3,
         price : '$15.99'
     },
 
     {
-        id : 2,
+        id : 4,
         name : 'Black leather jacket',
         imageUrl : Image4,
         price : '$39.99'
