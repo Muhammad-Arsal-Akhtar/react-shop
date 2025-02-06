@@ -13,11 +13,13 @@ import {homeProduct} from "../assets/sampleData";
 const Home = () => {
 
   const dispatch = useDispatch();
-  const productData = useSelector(state => state.products)
+  const productData = useSelector(state => state.product)
 
   useEffect(()=>{
     dispatch(setProducts(homeProduct))
-  }, [])
+    console.log(productData, 'productData')
+  }, [dispatch, productData])
+
 
     return (
       <>
@@ -45,11 +47,11 @@ const Home = () => {
         <InfoSection />
         <CategorySection />
 
-          {productData.map((elem, index)=>{
+          { productData.products.map((elem, index)=>(
 
-            <ProductCard key={index} productData={elem} />
+            <ProductCard key={index} productDetails={elem} />
 
-          }) }
+          )) }
         </>
       );
   };
