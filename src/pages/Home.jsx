@@ -8,6 +8,7 @@ import { ProductCard } from "../components/ProductCard";
 import { useEffect } from "react";
 import { setProducts } from "../redux/productSlice";
 import { homeProduct } from "../assets/sampleData";
+import ShopSection from "../components/ShopSection";
 
 
 const Home = () => {
@@ -56,6 +57,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+      
+      <ShopSection />      
+
     </>
   );
 };
