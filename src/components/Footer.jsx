@@ -1,4 +1,11 @@
-
+import { FaFacebook } from "react-icons/fa6";
+import { FaTwitterSquare } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa6";
+import { FaPinterest } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
+import { FaCcPaypal } from "react-icons/fa";
+import { FaCcStripe } from "react-icons/fa";
+import { FaCcVisa } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -41,24 +48,24 @@ const Footer = () => {
           <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
           <ul>
             <li className="flex items-center mb-2">
-              <img src="/assets/images/social_icons/facebook.svg" alt="Facebook" className="w-4 h-4 transition-transform transform hover:scale-110 mr-2" />
-              <a href="#" className="hover:text-primary">Facebook</a>
+              {/* <img src="/assets/images/social_icons/facebook.svg" alt="Facebook" className="w-4 h-4 transition-transform transform hover:scale-110 mr-2" /> */}
+              <a href="#" className="hover:text-red-500"><FaFacebook className="w-4 h-4 transition-transform transform hover:scale-110 mr-2" /></a>
             </li>
             <li className="flex items-center mb-2">
-              <img src="/assets/images/social_icons/twitter.svg" alt="Twitter" className="w-4 h-4 transition-transform transform hover:scale-110 mr-2" />
-              <a href="#" className="hover:text-primary">Twitter</a>
+              {/* <img src="/assets/images/social_icons/twitter.svg" alt="Twitter" className="w-4 h-4 transition-transform transform hover:scale-110 mr-2" /> */}
+              <a href="#" className="hover:text-red-500"><FaTwitterSquare className="w-4 h-4 transition-transform transform hover:scale-110 mr-2" /></a>
             </li>
             <li className="flex items-center mb-2">
-              <img src="/assets/images/social_icons/instagram.svg" alt="Instagram" className="w-4 h-4 transition-transform transform hover:scale-110 mr-2" />
-              <a href="#" className="hover:text-primary">Instagram</a>
+              {/* <img src="/assets/images/social_icons/instagram.svg" alt="Instagram" className="w-4 h-4 transition-transform transform hover:scale-110 mr-2" /> */}
+              <a href="#" className="hover:text-red-500"><FaInstagram className="w-4 h-4 transition-transform transform hover:scale-110 mr-2" /></a>
             </li>
             <li className="flex items-center mb-2">
-              <img src="/assets/images/social_icons/pinterest.svg" alt="Instagram" className="w-4 h-4 transition-transform transform hover:scale-110 mr-2" />
-              <a href="#" className="hover:text-primary">Pinterest</a>
+              {/* <img src="/assets/images/social_icons/pinterest.svg" alt="Instagram" className="w-4 h-4 transition-transform transform hover:scale-110 mr-2" /> */}
+              <a href="#" className="hover:text-red-500"><FaPinterest className="w-4 h-4 transition-transform transform hover:scale-110 mr-2" /></a>
             </li>
             <li className="flex items-center mb-2">
-              <img src="/assets/images/social_icons/youtube.svg" alt="Instagram" className="w-4 h-4 transition-transform transform hover:scale-110 mr-2" />
-              <a href="#" className="hover:text-primary">YouTube</a>
+              {/* <img src="/assets/images/social_icons/youtube.svg" alt="Instagram" className="w-4 h-4 transition-transform transform hover:scale-110 mr-2" /> */}
+              <a href="#" className="hover:text-red-500"><FaYoutube className="w-4 h-4 transition-transform transform hover:scale-110 mr-2" /></a>
             </li>
           </ul>
         </div>
@@ -88,9 +95,12 @@ const Footer = () => {
         </div>
         
         <div className="w-full lg:w-1/4 text-center lg:text-right">
-          <img src="/assets/images/social_icons/paypal.svg" alt="PayPal" className="inline-block h-8 mr-2" />
+        <FaCcPaypal className="inline-block h-8 mr-2" />
+        <FaCcStripe  className="inline-block h-8 mr-2" />
+        <FaCcVisa  className="inline-block h-8 mr-2" />
+          {/* <img src="/assets/images/social_icons/paypal.svg" alt="PayPal" className="inline-block h-8 mr-2" />
           <img src="/assets/images/social_icons/stripe.svg" alt="Stripe" className="inline-block h-8 mr-2" />
-          <img src="/assets/images/social_icons/visa.svg" alt="Visa" className="inline-block h-8" />
+          <img src="/assets/images/social_icons/visa.svg" alt="Visa" className="inline-block h-8" /> */}
         </div>
       </div>
     </div>
