@@ -6,6 +6,7 @@ import { FaYoutube } from "react-icons/fa";
 import { FaCcPaypal } from "react-icons/fa";
 import { FaCcStripe } from "react-icons/fa";
 import { FaCcVisa } from "react-icons/fa";
+import { Link } from "react-router";
 
 const Footer = () => {
   return (
@@ -28,10 +29,10 @@ const Footer = () => {
         <div className="w-full sm:w-1/6 px-4 mb-8">
           <h3 className="text-lg font-semibold mb-4">Pages</h3>
           <ul>
-            <li><a href="/shop.html" className="hover:text-primary">Shop</a></li>
-            <li><a href="/single-product-page.html" className="hover:text-primary">Product</a></li>
-            <li><a href="/checkout.html" className="hover:text-primary">Checkout</a></li>
-            <li><a href="/404.html" className="hover:text-primary">404</a></li>
+            <li><Link to="/" className="hover:text-primary">Home</Link></li>
+            <li><Link to="/shop" className="hover:text-primary">Shop</Link></li>
+            <li><Link to="/contact" className="hover:text-primary">Contact</Link></li>
+            <li><Link to="/about" className="hover:text-primary">About</Link></li>
           </ul>
         </div>
         
@@ -87,11 +88,11 @@ const Footer = () => {
         <div className="w-full lg:w-3/4 text-center lg:text-left mb-4 lg:mb-0">
           <p className="mb-2 font-bold">&copy; 2024 Your Company. All rights reserved.</p>
           <ul className="flex justify-center lg:justify-start space-x-4 mb-4 lg:mb-0">
-            <li><a href="#" className="hover:text-primary">Privacy Policy</a></li>
-            <li><a href="#" className="hover:text-primary">Terms of Service</a></li>
-            <li><a href="#" className="hover:text-primary">FAQ</a></li>
+            <li><Link href="#" className="hover:text-primary">Privacy Policy</Link></li>
+            <li><Link href="#" className="hover:text-primary">Terms of Service</Link></li>
+            <li><Link href="#" className="hover:text-primary">FAQ</Link></li>
           </ul>
-          <p className="text-sm mt-4">Your shop's description goes here. This is a brief introduction to your shop and what you offer.</p>
+          <p className="text-sm mt-4">Your shops description goes here. This is a brief introduction to your shop and what you offer.</p>
         </div>
         
         <div className="w-full lg:w-1/4 text-center lg:text-right">
