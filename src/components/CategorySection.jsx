@@ -14,7 +14,7 @@ const CategorySection = () => {
 
     return (
         <>
-            <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
+            <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-6 sm:grid-cols-2 md:grid-cols-2 px-4">
                 {categoryData.map((category, index) => (
                     <a key={`category-${index}`} href="#" className="block">
                         <img
