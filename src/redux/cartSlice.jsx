@@ -1,7 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    cart : [],
+    productsInCart : [],
+    totalPrice : 0,
+    totalQuantity : 0
 }
 
 
@@ -9,7 +11,26 @@ export const cartSlice = createSlice({
     name : 'cart',
     initialState,
     reducers : {
-        addTocart : () =>{
+        addTocart : (state, action) =>{
+            const newItem = action.payload
+            const itemObjectExist = state.productsInCart.find( (elem)=> elem.id == newItem.id )
+
+            if(itemObjectExist){
+                itemObjectExist.quantity++
+                itemObjectExist.price = itemObjectExist.price + newItem.price
+            }else{
+                state.productsInCart.push({
+                    id : newItem.id,
+                    name : newItem.name,
+                    price : newItem.price,
+                    quantity : 1,
+                    // price : newItem,
+                    image : newItem.image
+                })
+            }
+
+            state.totalPrice += newItem.price;
+            state.totalQuantity++;
 
         }
     }
