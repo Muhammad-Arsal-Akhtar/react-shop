@@ -51,13 +51,13 @@ export const homeProduct = [
 export const shopData = [
     
     {
-        id : 1,
+        id : 8,
         name : 'Blue Womens Suit',
         imageUrl : Image5,
         price : '$19.99'
     },
     {
-        id : 2,
+        id : 7,
         name : 'Yellow Mens Suit',
         imageUrl : Image7,
         price : '$15.99'
@@ -69,13 +69,13 @@ export const shopData = [
         price : '$15.99'
     },
     {
-        id : 4,
+        id : 5,
         name : 'White Shirt Long Sleeves',
         imageUrl : Image6,
         price : '$29.99'
     },
     {
-        id : 5,
+        id : 4,
         name : 'Black leather jacket',
         imageUrl : Image4,
         price : '$39.99'
@@ -87,13 +87,13 @@ export const shopData = [
         price : '$39.99'
     },
     {
-        id : 7,
+        id : 2,
         name : 'Black suit',
         imageUrl : Image2,
         price : '$29.99'
     },
     {
-        id : 8,
+        id : 1,
         name : 'Summer black dress',
         imageUrl : Image1,
         price : '$19.99'

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router";
+import { FaShoppingCart } from "react-icons/fa";
 
 const Navbar = () => {
     const [search, setSearch] = useState("");
@@ -45,17 +46,11 @@ const Navbar = () => {
                 <div className="flex items-center space-x-4">
                   {/* Cart Icon with Badge */}
                   <button className="relative">
-                    <svg
-                      className="w-7 h-7 text-gray-700"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M7 4h-2V2h2V4zM17 4h2V2h-2V4zM3 6v2h2l3.6 7.59L6.24 18H18v-2h-9.76l1.26-2.41L17 8H3z"></path>
-                    </svg>
-                    <span className="absolute top-0 right-0 bg-red-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                      3
-                    </span>
+
+                    <FaShoppingCart className="w-8 h-8 text-gray-700" /> {/* Increased icon size */}
+                      <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                        3
+                      </span>
                   </button>
       
                   {/* Login Button */}
