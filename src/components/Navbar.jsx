@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { Link } from "react-router";
 import { FaShoppingCart } from "react-icons/fa";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
     const [search, setSearch] = useState("");
+
+    const productInCartCount = useSelector(state => state.cart.productsInCart)
 
     return (
         <>
@@ -49,7 +52,7 @@ const Navbar = () => {
 
                     <FaShoppingCart className="w-8 h-8 text-gray-700" /> {/* Increased icon size */}
                       <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                        3
+                        { productInCartCount.length > 0 ? productInCartCount.length : <></> }
                       </span>
                   </button>
       

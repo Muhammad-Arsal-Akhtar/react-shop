@@ -1,6 +1,16 @@
 
+import { useDispatch } from "react-redux"
+import { addTocart } from "../redux/cartSlice"
 
 export const ProductCard = ({ productDetails }) => {
+
+   const dispatch = useDispatch()
+
+   const addProduct = (event, productDetails) => {
+        event.stopPropagation()
+        event.preventDefault()
+        dispatch(addTocart(productDetails))
+    }
 
     return (
         <>
@@ -14,7 +24,7 @@ export const ProductCard = ({ productDetails }) => {
                         <span className="text-lg font-bold text-primary">{productDetails.price}</span>
                         <span className="text-sm line-through ml-2">$24.99</span>
                     </div>
-                    <button className="bg-red-500 border border-transparent hover:bg-transparent hover:border-red-500 hover:text-red-500 font-semibold py-2 px-4 rounded-full w-full text-white hover:cursor-pointer">Add to Cart</button>
+                    <button onClick={(event) => addProduct(event, productDetails)} className="bg-red-500 border border-transparent hover:bg-transparent hover:border-red-500 hover:text-red-500 font-semibold py-2 px-4 rounded-full w-full text-white hover:cursor-pointer">Add to Cart</button>
                 </div>
             </div>
 
