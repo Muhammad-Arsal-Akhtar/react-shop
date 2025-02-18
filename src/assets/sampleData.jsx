@@ -22,28 +22,28 @@ export const homeProduct = [
         id : 1,
         name : 'Summer black dress',
         imageUrl : Image1,
-        price : '$19.99'
+        price : '19.99'
     },
 
     {
         id : 2,
         name : 'Black suit',
         imageUrl : Image2,
-        price : '$29.99'
+        price : '29.99'
     },
 
     {
         id : 3,
         name : 'Black long dress',
         imageUrl : Image3,
-        price : '$15.99'
+        price : '15.99'
     },
 
     {
         id : 4,
         name : 'Black leather jacket',
         imageUrl : Image4,
-        price : '$39.99'
+        price : '39.99'
     },
 ]
 
@@ -54,49 +54,49 @@ export const shopData = [
         id : 8,
         name : 'Blue Womens Suit',
         imageUrl : Image5,
-        price : '$19.99'
+        price : '19.99'
     },
     {
         id : 7,
         name : 'Yellow Mens Suit',
         imageUrl : Image7,
-        price : '$15.99'
+        price : '15.99'
     },
     {
         id : 3,
         name : 'Black long dress',
         imageUrl : Image3,
-        price : '$15.99'
+        price : '15.99'
     },
     {
         id : 5,
         name : 'White Shirt Long Sleeves',
         imageUrl : Image6,
-        price : '$29.99'
+        price : '29.99'
     },
     {
         id : 4,
         name : 'Black leather jacket',
         imageUrl : Image4,
-        price : '$39.99'
+        price : '39.99'
     },
     {
         id : 6,
         name : 'Red Dress',
         imageUrl : Image8,
-        price : '$39.99'
+        price : '39.99'
     },
     {
         id : 2,
         name : 'Black suit',
         imageUrl : Image2,
-        price : '$29.99'
+        price : '29.99'
     },
     {
         id : 1,
         name : 'Summer black dress',
         imageUrl : Image1,
-        price : '$19.99'
+        price : '19.99'
     },
 
 ]

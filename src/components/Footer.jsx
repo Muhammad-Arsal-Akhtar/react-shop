@@ -15,7 +15,7 @@ const Footer = () => {
     <div className="container mx-auto px-4 py-10">
       <div className="flex flex-wrap -mx-4">
         
-        <div className="w-full sm:w-1/6 px-4 mb-8">
+        <div className="w-full sm:w-1/6 px-4 mb-8 text-center">
           <h3 className="text-lg font-semibold mb-4">Shop</h3>
           <ul>
             <li><a href="/shop.html" className="hover:text-primary">Shop</a></li>
@@ -26,7 +26,7 @@ const Footer = () => {
           </ul>
         </div>
         
-        <div className="w-full sm:w-1/6 px-4 mb-8">
+        <div className="w-full sm:w-1/6 px-4 mb-8 text-center">
           <h3 className="text-lg font-semibold mb-4">Pages</h3>
           <ul>
             <li><Link to="/" className="hover:text-primary">Home</Link></li>
@@ -37,7 +37,7 @@ const Footer = () => {
           </ul>
         </div>
         
-        <div className="w-full sm:w-1/6 px-4 mb-8">
+        <div className="w-full sm:w-1/6 px-4 mb-8 text-center">
           <h3 className="text-lg font-semibold mb-4">Account</h3>
           <ul>
             <li><a href="/cart.html" className="hover:text-primary">Cart</a></li>
@@ -46,33 +46,33 @@ const Footer = () => {
           </ul>
         </div>
        
-        <div className="w-full sm:w-1/6 px-4 mb-8">
+        <div className="w-full sm:w-1/6 px-4 mb-8 text-center">
           <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
           <ul>
-            <li className="flex items-center mb-2">
+            <li className="flex items-center mb-2 justify-center">
               {/* <img src="/assets/images/social_icons/facebook.svg" alt="Facebook" className="w-4 h-4 transition-transform transform hover:scale-110 mr-2" /> */}
               <a href="#" className="hover:text-red-500"><FaFacebook className="w-4 h-4 transition-transform transform hover:scale-110 mr-2" /></a>
             </li>
-            <li className="flex items-center mb-2">
+            <li className="flex items-center mb-2 justify-center">
               {/* <img src="/assets/images/social_icons/twitter.svg" alt="Twitter" className="w-4 h-4 transition-transform transform hover:scale-110 mr-2" /> */}
               <a href="#" className="hover:text-red-500"><FaTwitterSquare className="w-4 h-4 transition-transform transform hover:scale-110 mr-2" /></a>
             </li>
-            <li className="flex items-center mb-2">
+            <li className="flex items-center justify-center mb-2">
               {/* <img src="/assets/images/social_icons/instagram.svg" alt="Instagram" className="w-4 h-4 transition-transform transform hover:scale-110 mr-2" /> */}
               <a href="#" className="hover:text-red-500"><FaInstagram className="w-4 h-4 transition-transform transform hover:scale-110 mr-2" /></a>
             </li>
-            <li className="flex items-center mb-2">
+            <li className="flex items-center mb-2 justify-center">
               {/* <img src="/assets/images/social_icons/pinterest.svg" alt="Instagram" className="w-4 h-4 transition-transform transform hover:scale-110 mr-2" /> */}
               <a href="#" className="hover:text-red-500"><FaPinterest className="w-4 h-4 transition-transform transform hover:scale-110 mr-2" /></a>
             </li>
-            <li className="flex items-center mb-2">
+            <li className="flex items-center mb-2 justify-center">
               {/* <img src="/assets/images/social_icons/youtube.svg" alt="Instagram" className="w-4 h-4 transition-transform transform hover:scale-110 mr-2" /> */}
               <a href="#" className="hover:text-red-500"><FaYoutube className="w-4 h-4 transition-transform transform hover:scale-110 mr-2" /></a>
             </li>
           </ul>
         </div>
        
-        <div className="w-full sm:w-2/6 px-4 mb-8">
+        <div className="w-full sm:w-2/6 px-4 mb-8 text-center">
           <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
           <p><img src="assets/images/template-logo.png" alt="Logo" className="h-[60px] mb-4" /></p>
           <p>123 Street Name, Paris, France</p>
