@@ -18,19 +18,19 @@ export const cartSlice = createSlice({
 
             if(itemObjectExist){
                 itemObjectExist.quantity++
-                itemObjectExist.price = itemObjectExist.price + newItem.price
+                itemObjectExist.price = parseFloat(itemObjectExist.price) + parseFloat(newItem.price)
             }else{
                 state.productsInCart.push({
                     id : newItem.id,
                     name : newItem.name,
                     price : newItem.price,
                     quantity : 1,
-                    // price : newItem,
+                    individualItemPrice : newItem.price,
                     image : newItem.imageUrl
                 })
             }
 
-            state.totalPrice += newItem.price;
+            state.totalPrice += parseFloat(newItem.price);
             state.totalQuantity++;
 
         }

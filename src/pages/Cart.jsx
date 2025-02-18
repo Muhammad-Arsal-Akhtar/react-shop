@@ -34,7 +34,7 @@ const Cart = () => {
                         <span className="font-semibold">{product.name}</span>
                       </div>
                     </td>
-                    <td className="py-4">{product.price}</td>
+                    <td className="py-4">${product.individualItemPrice}</td>
                     <td className="py-4">
                       <div className="flex items-center">
                         <button className="border rounded-md py-2 px-4 mr-2">-</button>
@@ -42,7 +42,7 @@ const Cart = () => {
                         <button className="border rounded-md py-2 px-4 ml-2">+</button>
                       </div>
                     </td>
-                    <td className="py-4">$19.99</td>
+                    <td className="py-4">${product.price}</td>
                   </tr>
                   ))}
                 </tbody>
