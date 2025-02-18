@@ -13,6 +13,7 @@ export const cartSlice = createSlice({
     reducers : {
         addTocart : (state, action) =>{
             const newItem = action.payload
+            console.log(newItem)
             const itemObjectExist = state.productsInCart.find( (elem)=> elem.id == newItem.id )
 
             if(itemObjectExist){
@@ -25,7 +26,7 @@ export const cartSlice = createSlice({
                     price : newItem.price,
                     quantity : 1,
                     // price : newItem,
-                    image : newItem.image
+                    image : newItem.imageUrl
                 })
             }
 

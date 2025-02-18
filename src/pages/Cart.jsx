@@ -22,27 +22,29 @@ const Cart = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                  {productsInCart.productsInCart.map((product, index)=> (                    
+                  <tr key={index}>
                     <td className="py-4">
                       <div className="flex items-center">
                         <img
                           className="h-16 w-16 mr-4"
-                          src="https://via.placeholder.com/150"
+                          src={'.'+product.image}
                           alt="Product"
                         />
-                        <span className="font-semibold">Product name</span>
+                        <span className="font-semibold">{product.name}</span>
                       </div>
                     </td>
-                    <td className="py-4">$19.99</td>
+                    <td className="py-4">{product.price}</td>
                     <td className="py-4">
                       <div className="flex items-center">
                         <button className="border rounded-md py-2 px-4 mr-2">-</button>
-                        <span className="text-center w-8">1</span>
+                        <span className="text-center w-8">{product.quantity}</span>
                         <button className="border rounded-md py-2 px-4 ml-2">+</button>
                       </div>
                     </td>
                     <td className="py-4">$19.99</td>
                   </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
