@@ -1,5 +1,5 @@
 
-const Modal = ({isOpen, setIsOpen}) => {
+const Modal = ({ isOpen, setIsOpen, ChangeAddress }) => {
 
   return (
     <>
@@ -16,7 +16,7 @@ const Modal = ({isOpen, setIsOpen}) => {
             {/* Modal Header */}
             <div className="flex items-center justify-between p-4 border-b">
               <h3 className="text-xl font-semibold text-gray-900">
-                Terms of Service
+                Change Address
               </h3>
               <button
                 type="button"
@@ -44,40 +44,13 @@ const Modal = ({isOpen, setIsOpen}) => {
 
             {/* Modal Body */}
             <div className="p-4 space-y-4">
-              <p className="text-base text-gray-500">
-                With less than a month to go before the European Union enacts
-                new consumer privacy laws for its citizens, companies around the
-                world are updating their terms of service agreements to comply.
-              </p>
-              <p className="text-base text-gray-500">
-                The European Union’s General Data Protection Regulation (G.D.P.R.)
-                goes into effect on May 25 and is meant to ensure a common set of
-                data rights in the European Union. It requires organizations to notify
-                users as soon as possible of high-risk data breaches that could
-                personally affect them.
-              </p>
+              {ChangeAddress}
             </div>
-
-            {/* Modal Footer */}
-            <div className="flex items-center p-4 border-t">
-              <button
-                onClick={() => setIsOpen(false)}
-                className="text-white bg-blue-700 hover:bg-blue-800 px-5 py-2.5 rounded-lg"
-              >
-                I accept
-              </button>
-              <button
-                onClick={() => setIsOpen(false)}
-                className="py-2.5 px-5 ml-3 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 hover:cursor-pointer"
-              >
-                Decline
-              </button>
             </div>
           </div>
-        </div>
       )}
-    </>
-  );
+        </>
+      );
 }
 
-export default Modal
+      export default Modal

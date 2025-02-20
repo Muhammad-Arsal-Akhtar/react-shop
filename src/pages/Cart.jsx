@@ -2,10 +2,12 @@ import { useSelector } from "react-redux";
 import { TbGardenCartOff } from "react-icons/tb";
 import { useState } from "react";
 import Modal from "../components/Modal";
+import ChangeAddress from "../components/ChangeAddress";
 
 const Cart = () => {
   const productsInCart = useSelector(state => state.cart)
   const [isOpen, setIsOpen] = useState(false);
+  const [address , changeAddress] = useState('Jelflon street, 0005, Flat 8')
 
 
   return (
@@ -69,7 +71,7 @@ const Cart = () => {
               <br />
               <div className="flex justify-between mb-2">
                 <span>Address:</span>
-                <span>Jelflon street, 0005, Flat 8.</span>
+                <span>{address}</span>
               </div>
               <br />
               <div className="flex justify-between mb-2">
@@ -95,7 +97,7 @@ const Cart = () => {
           </div>
         </div>
       </div>
-        <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
+        <Modal isOpen={isOpen} setIsOpen={setIsOpen} ChangeAddress={<ChangeAddress changeAddress={changeAddress} setIsOpen={setIsOpen} />} />
     </div>
 
 
