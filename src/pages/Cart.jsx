@@ -8,12 +8,14 @@ import { useDispatch } from "react-redux";
 import { removeFromCart } from "../redux/cartSlice";
 import { increaseItem } from "../redux/cartSlice";
 import { decreaseItem } from "../redux/cartSlice";
+import { useNavigate } from "react-router";
 
 const Cart = () => {
   const productsInCart = useSelector(state => state.cart)
   const [isOpen, setIsOpen] = useState(false);
   const [address, changeAddress] = useState('Jelflon street, 0005, Flat 8')
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   return (
     <>
@@ -50,13 +52,13 @@ const Cart = () => {
                           <td className="py-4">${product.individualItemPrice}</td>
                           <td className="py-4">
                             <div className="flex items-center">
-                              <button className="border rounded-md py-2 px-4 mr-2 hover:cursor-pointer" onClick={()=> dispatch(decreaseItem(product.id))}>-</button>
+                              <button className="border rounded-md py-2 px-4 mr-2 hover:cursor-pointer" onClick={() => dispatch(decreaseItem(product.id))}>-</button>
                               <span className="text-center w-8">{product.quantity}</span>
-                              <button className="border rounded-md py-2 px-4 ml-2 hover:cursor-pointer" onClick={()=> dispatch(increaseItem(product.id))}>+</button>
+                              <button className="border rounded-md py-2 px-4 ml-2 hover:cursor-pointer" onClick={() => dispatch(increaseItem(product.id))}>+</button>
                             </div>
                           </td>
                           <td className="py-4">${product.price}</td>
-                          <td className="py-4"><FaTrashCan className="mx-auto text-red-500 hover:cursor-pointer" onClick={ ()=> dispatch(removeFromCart(product.id)) } /></td>
+                          <td className="py-4"><FaTrashCan className="mx-auto text-red-500 hover:cursor-pointer" onClick={() => dispatch(removeFromCart(product.id))} /></td>
 
                         </tr>
                       ))}
@@ -98,7 +100,7 @@ const Cart = () => {
                     <span className="font-semibold">Total</span>
                     <span className="font-semibold">${productsInCart.totalPrice}</span>
                   </div>
-                  <button className="bg-red-500 text-white py-2 px-4 rounded-lg mt-4 w-full">
+                  <button className="bg-red-500 text-white py-2 px-4 rounded-lg mt-4 w-full hover:cursor-pointer" onClick={() => navigate('/checkout')}>
                     Checkout
                   </button>
                 </div>
