@@ -6,6 +6,8 @@ import ChangeAddress from "../components/ChangeAddress";
 import { FaTrashCan } from "react-icons/fa6";
 import { useDispatch } from "react-redux";
 import { removeFromCart } from "../redux/cartSlice";
+import { increaseItem } from "../redux/cartSlice";
+import { decreaseItem } from "../redux/cartSlice";
 
 const Cart = () => {
   const productsInCart = useSelector(state => state.cart)
@@ -48,9 +50,9 @@ const Cart = () => {
                           <td className="py-4">${product.individualItemPrice}</td>
                           <td className="py-4">
                             <div className="flex items-center">
-                              <button className="border rounded-md py-2 px-4 mr-2">-</button>
+                              <button className="border rounded-md py-2 px-4 mr-2" onClick={()=> dispatch(decreaseItem(product.id))}>-</button>
                               <span className="text-center w-8">{product.quantity}</span>
-                              <button className="border rounded-md py-2 px-4 ml-2">+</button>
+                              <button className="border rounded-md py-2 px-4 ml-2" onClick={()=> dispatch(increaseItem(product.id))}>+</button>
                             </div>
                           </td>
                           <td className="py-4">${product.price}</td>
