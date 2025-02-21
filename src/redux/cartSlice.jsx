@@ -51,10 +51,10 @@ export const cartSlice = createSlice({
 
             if (itemExist) {
                 itemExist.quantity++
-                itemExist.price = parseFloat(itemExist.price) + parseFloat(itemExist.individualItemPrice)
+                itemExist.price = Number(Number(itemExist.price) + Number(itemExist.individualItemPrice)).toFixed(2) 
 
                 state.totalQuantity++
-                state.totalPrice = parseFloat(state.totalPrice) + parseFloat(itemExist.individualItemPrice)
+                state.totalPrice = Number(Number(state.totalPrice) + Number(itemExist.individualItemPrice)).toFixed(2) 
             }
         },
 
@@ -64,10 +64,10 @@ export const cartSlice = createSlice({
 
             if (itemExist && itemExist.quantity > 1) {
                 itemExist.quantity--
-                itemExist.price = parseFloat(itemExist.price) - parseFloat(itemExist.individualItemPrice)
+                itemExist.price = Number(Number(itemExist.price) - Number(itemExist.individualItemPrice)).toFixed(2) 
 
                 state.totalQuantity--
-                state.totalPrice = parseFloat(state.totalPrice) - parseFloat(itemExist.individualItemPrice)
+                state.totalPrice = Number(Number(state.totalPrice) - Number(itemExist.individualItemPrice)).toFixed(2) 
             }
         }
 
