@@ -50,9 +50,9 @@ const Cart = () => {
                           <td className="py-4">${product.individualItemPrice}</td>
                           <td className="py-4">
                             <div className="flex items-center">
-                              <button className="border rounded-md py-2 px-4 mr-2" onClick={()=> dispatch(decreaseItem(product.id))}>-</button>
+                              <button className="border rounded-md py-2 px-4 mr-2 hover:cursor-pointer" onClick={()=> dispatch(decreaseItem(product.id))}>-</button>
                               <span className="text-center w-8">{product.quantity}</span>
-                              <button className="border rounded-md py-2 px-4 ml-2" onClick={()=> dispatch(increaseItem(product.id))}>+</button>
+                              <button className="border rounded-md py-2 px-4 ml-2 hover:cursor-pointer" onClick={()=> dispatch(increaseItem(product.id))}>+</button>
                             </div>
                           </td>
                           <td className="py-4">${product.price}</td>
