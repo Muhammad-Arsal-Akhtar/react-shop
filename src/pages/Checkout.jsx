@@ -14,6 +14,12 @@ const Checkout = () => {
 
   const [paymentMethod, setPaymentMethod] = useState('')
 
+  const [shippingInfo, setShippingInfo] = useState({
+    address: '',
+    city: '',
+    zip_code: ''
+  })
+
   return (
     <>
       <div className="bg-gray-100 py-8 mt-24">
@@ -116,15 +122,15 @@ const Checkout = () => {
                         <div className="grid gap-6 mb-6 md:grid-cols-1">
                           <div>
                             <label htmlFor="address" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Address</label>
-                            <input type="text" id="address" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="123 Main St" required />
+                            <input type="text" id="address" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="123 Main St" name="address" onChange={(e) => setShippingInfo({ ...shippingInfo, address: e.target.value })} required />
                           </div>
                           <div>
                             <label htmlFor="city" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">City</label>
-                            <input type="text" id="city" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="New York" required />
+                            <input type="text" id="city" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="New York" name="city" onChange={(e) => setShippingInfo({ ...shippingInfo, city: e.target.value })} required />
                           </div>
                           <div>
                             <label htmlFor="zip_code" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Zip Code</label>
-                            <input type="text" id="zip_code" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="10001" required />
+                            <input type="text" id="zip_code" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="10001" name="zip_code" onChange={(e) => setShippingInfo({ ...shippingInfo, zip_code: e.target.value })} required />
                           </div>
                         </div>
                       </form>
@@ -168,7 +174,7 @@ const Checkout = () => {
                       <form>
                         <div className="grid gap-6 mb-6 md:grid-cols-1">
                           <div>
-                            <div className="flex items-center mb-4" onClick={(e)=> setPaymentMethod(e.target.value) }>
+                            <div className="flex items-center mb-4" onClick={(e) => setPaymentMethod(e.target.value)}>
                               <input
                                 id="default-radio-1"
                                 type="radio"
@@ -184,7 +190,7 @@ const Checkout = () => {
                               </label>
                             </div>
 
-                            <div className="flex items-center" onClick={(e)=> setPaymentMethod(e.target.value) }>
+                            <div className="flex items-center" onClick={(e) => setPaymentMethod(e.target.value)}>
                               <input
                                 id="default-radio-2"
                                 type="radio"
@@ -200,71 +206,71 @@ const Checkout = () => {
                               </label>
                             </div>
                             {(paymentMethod == 'dc') && (
-                            
-                            <div className="flex justify-center items-center">
-                              <div className="bg-gray-200 p-6 rounded-lg shadow-lg w-full mt-4">
-                                <h2 className="text-lg font-semibold text-gray-800 mb-4">Payment Details</h2>
 
-                                <div className="mb-4">
-                                  <label htmlFor="cardNumber" className="block text-sm font-medium text-gray-900">
-                                    Card Number
-                                  </label>
-                                  <input
-                                    type="text"
-                                    id="cardNumber"
-                                    name="cardNumber"
-                                    placeholder="1234 5678 9012 3456"
-                                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                    required
-                                  />
-                                </div>
+                              <div className="flex justify-center items-center">
+                                <div className="bg-gray-200 p-6 rounded-lg shadow-lg w-full mt-4">
+                                  <h2 className="text-lg font-semibold text-gray-800 mb-4">Payment Details</h2>
 
-                                <div className="mb-4">
-                                  <label htmlFor="cardHolder" className="block text-sm font-medium text-gray-900">
-                                    Cardholder Name
-                                  </label>
-                                  <input
-                                    type="text"
-                                    id="cardHolder"
-                                    name="cardHolder"
-                                    placeholder="John Doe"
-                                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                    required
-                                  />
-                                </div>
-
-                                <div className="grid grid-cols-2 gap-4">
-                                  <div>
-                                    <label htmlFor="expiryDate" className="block text-sm font-medium text-gray-900">
-                                      Expiry Date
+                                  <div className="mb-4">
+                                    <label htmlFor="cardNumber" className="block text-sm font-medium text-gray-900">
+                                      Card Number
                                     </label>
                                     <input
                                       type="text"
-                                      id="expiryDate"
-                                      name="expiryDate"
-                                      placeholder="MM/YY"
+                                      id="cardNumber"
+                                      name="cardNumber"
+                                      placeholder="1234 5678 9012 3456"
                                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                       required
                                     />
                                   </div>
 
-                                  <div>
-                                    <label htmlFor="cvv" className="block text-sm font-medium text-gray-900">
-                                      CVV
+                                  <div className="mb-4">
+                                    <label htmlFor="cardHolder" className="block text-sm font-medium text-gray-900">
+                                      Cardholder Name
                                     </label>
                                     <input
-                                      type="password"
-                                      id="cvv"
-                                      name="cvv"
-                                      placeholder="123"
-                                      maxLength="4"
+                                      type="text"
+                                      id="cardHolder"
+                                      name="cardHolder"
+                                      placeholder="John Doe"
                                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                       required
                                     />
                                   </div>
+
+                                  <div className="grid grid-cols-2 gap-4">
+                                    <div>
+                                      <label htmlFor="expiryDate" className="block text-sm font-medium text-gray-900">
+                                        Expiry Date
+                                      </label>
+                                      <input
+                                        type="text"
+                                        id="expiryDate"
+                                        name="expiryDate"
+                                        placeholder="MM/YY"
+                                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                        required
+                                      />
+                                    </div>
+
+                                    <div>
+                                      <label htmlFor="cvv" className="block text-sm font-medium text-gray-900">
+                                        CVV
+                                      </label>
+                                      <input
+                                        type="password"
+                                        id="cvv"
+                                        name="cvv"
+                                        placeholder="123"
+                                        maxLength="4"
+                                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                        required
+                                      />
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
-                            </div>
                             )}
 
                           </div>
@@ -282,26 +288,26 @@ const Checkout = () => {
                 <span>Subtotal</span>
                 <span>$19.99</span>
                 </div> */}
-                  {productsInCart.productsInCart.map((product, index) => (
-                    <div key={index}>
-                      <hr className="my-2" />
-                      <div className="py-4">
-                        <div className="flex items-center">
-                          <img
-                            className="h-16 w-16 mr-4"
-                            src={'.' + product.image}
-                            alt="Product"
-                          />
-                          <div className="flex flex-col">
-                            <span className="font-semibold">{product.name}</span>
-                            <span className="font-semibold">${product.individualItemPrice} * {product.quantity}</span>
-                          </div>
-                          <span className="font-semibold ml-auto">${product.price}</span>
+                {productsInCart.productsInCart.map((product, index) => (
+                  <div key={index}>
+                    <hr className="my-2" />
+                    <div className="py-4">
+                      <div className="flex items-center">
+                        <img
+                          className="h-16 w-16 mr-4"
+                          src={'.' + product.image}
+                          alt="Product"
+                        />
+                        <div className="flex flex-col">
+                          <span className="font-semibold">{product.name}</span>
+                          <span className="font-semibold">${product.individualItemPrice} * {product.quantity}</span>
                         </div>
+                        <span className="font-semibold ml-auto">${product.price}</span>
                       </div>
-
                     </div>
-                  ))}
+
+                  </div>
+                ))}
 
                 <hr className="my-2" />
                 <div className="flex justify-between mb-2">
