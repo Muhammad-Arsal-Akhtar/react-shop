@@ -281,36 +281,39 @@ const Checkout = () => {
                 {/* <div className="flex justify-between mb-2">
                 <span>Subtotal</span>
                 <span>$19.99</span>
-              </div> */}
+                </div> */}
+                  {productsInCart.productsInCart.map((product, index) => (
+                    <div key={index}>
+                      <hr className="my-2" />
+                      <div className="py-4">
+                        <div className="flex items-center">
+                          <img
+                            className="h-16 w-16 mr-4"
+                            src={'.' + product.image}
+                            alt="Product"
+                          />
+                          <div className="flex flex-col">
+                            <span className="font-semibold">{product.name}</span>
+                            <span className="font-semibold">${product.individualItemPrice} * {product.quantity}</span>
+                          </div>
+                          <span className="font-semibold ml-auto">${product.price}</span>
+                        </div>
+                      </div>
+
+                    </div>
+                  ))}
+
                 <hr className="my-2" />
                 <div className="flex justify-between mb-2">
                   <span className="font-semibold">Total Items</span>
                   <span className="font-semibold">{productsInCart.totalQuantity}</span>
                 </div>
-                <br />
-                <div className="flex justify-between mb-2">
-                  <span>Address:</span>
-                  {/* <span>{address}</span> */}
-                </div>
-                <br />
-                <div className="flex justify-between mb-2">
-                  {/* <a href="">Change Address</a> */}
-                  {/* Open Modal Button */}
-                  <button
-                    onClick={() => setIsOpen(true)}
-                    className="bg-red-500 text-white px-4 py-2 rounded-md hover:cursor-pointer"
-                  >
-                    Change Address
-                  </button>
-                </div>
-
-                <hr className="my-2" />
                 <div className="flex justify-between mb-2">
                   <span className="font-semibold">Total</span>
                   <span className="font-semibold">${productsInCart.totalPrice}</span>
                 </div>
                 <button className="bg-red-500 text-white py-2 px-4 rounded-lg mt-4 w-full">
-                  Checkout
+                  Place Order
                 </button>
               </div>
             </div>
