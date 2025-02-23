@@ -12,6 +12,8 @@ const Checkout = () => {
     setOpenAccordion(openAccordion === id ? null : id);
   };
 
+  const [paymentMethod, setPaymentMethod] = useState('')
+
   return (
     <>
       <div className="bg-gray-100 py-8 mt-24">
@@ -166,36 +168,105 @@ const Checkout = () => {
                       <form>
                         <div className="grid gap-6 mb-6 md:grid-cols-1">
                           <div>
-                            <div className="flex items-center mb-4">
+                            <div className="flex items-center mb-4" onClick={(e)=> setPaymentMethod(e.target.value) }>
                               <input
                                 id="default-radio-1"
                                 type="radio"
-                                name="default-radio"
-                                value="default-radio-1"
-                                className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                                name="payment_method"
+                                value="cod"
+                                className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 hover:cursor-pointer"
                               />
                               <label
                                 htmlFor="default-radio-1"
-                                className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300 hover:cursor-pointer"
                               >
                                 Cash on Delivery
                               </label>
                             </div>
 
-                            <div className="flex items-center">
+                            <div className="flex items-center" onClick={(e)=> setPaymentMethod(e.target.value) }>
                               <input
                                 id="default-radio-2"
                                 type="radio"
-                                name="default-radio"
-                                className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                                name="payment_method"
+                                value="dc"
+                                className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 hover:cursor-pointer"
                               />
                               <label
                                 htmlFor="default-radio-2"
-                                className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                                className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300 hover:cursor-pointer"
                               >
                                 Debit Card
                               </label>
                             </div>
+                            {(paymentMethod == 'dc') && (
+                            
+                            <div className="flex justify-center items-center">
+                              <div className="bg-gray-200 p-6 rounded-lg shadow-lg w-full mt-4">
+                                <h2 className="text-lg font-semibold text-gray-800 mb-4">Payment Details</h2>
+
+                                <div className="mb-4">
+                                  <label htmlFor="cardNumber" className="block text-sm font-medium text-gray-900">
+                                    Card Number
+                                  </label>
+                                  <input
+                                    type="text"
+                                    id="cardNumber"
+                                    name="cardNumber"
+                                    placeholder="1234 5678 9012 3456"
+                                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                    required
+                                  />
+                                </div>
+
+                                <div className="mb-4">
+                                  <label htmlFor="cardHolder" className="block text-sm font-medium text-gray-900">
+                                    Cardholder Name
+                                  </label>
+                                  <input
+                                    type="text"
+                                    id="cardHolder"
+                                    name="cardHolder"
+                                    placeholder="John Doe"
+                                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                    required
+                                  />
+                                </div>
+
+                                <div className="grid grid-cols-2 gap-4">
+                                  <div>
+                                    <label htmlFor="expiryDate" className="block text-sm font-medium text-gray-900">
+                                      Expiry Date
+                                    </label>
+                                    <input
+                                      type="text"
+                                      id="expiryDate"
+                                      name="expiryDate"
+                                      placeholder="MM/YY"
+                                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                      required
+                                    />
+                                  </div>
+
+                                  <div>
+                                    <label htmlFor="cvv" className="block text-sm font-medium text-gray-900">
+                                      CVV
+                                    </label>
+                                    <input
+                                      type="password"
+                                      id="cvv"
+                                      name="cvv"
+                                      placeholder="123"
+                                      maxLength="4"
+                                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                      required
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            )}
+
                           </div>
                         </div>
                       </form>
