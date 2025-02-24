@@ -1,10 +1,12 @@
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router";
 
-const Checkout = () => {
+const Checkout = ({ setOrder }) => {
   const productsInCart = useSelector(state => state.cart)
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const [openAccordion, setOpenAccordion] = useState(1);
 
@@ -19,6 +21,17 @@ const Checkout = () => {
     city: '',
     zip_code: ''
   })
+
+  const handleOrder = () => {
+    const newOrder = {
+      products: productsInCart.productsInCart,
+      orderNumber: "XGH123",
+      shippingInfo: shippingInfo,
+      totalPrice: productsInCart.totalPrice
+    }
+    setOrder(newOrder)
+    navigate('/order')
+  }
 
   return (
     <>
@@ -318,7 +331,7 @@ const Checkout = () => {
                   <span className="font-semibold">Total</span>
                   <span className="font-semibold">${productsInCart.totalPrice}</span>
                 </div>
-                <button className="bg-red-500 text-white py-2 px-4 rounded-lg mt-4 w-full">
+                <button onClick={() => handleOrder()} className="bg-red-500 text-white py-2 px-4 rounded-lg mt-4 w-full">
                   Place Order
                 </button>
               </div>

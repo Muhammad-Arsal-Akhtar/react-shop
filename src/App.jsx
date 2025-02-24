@@ -8,8 +8,11 @@ import Contact from './pages/Contact'
 import About from './pages/About'
 import Cart from './pages/Cart'
 import Checkout from './pages/Checkout'
+import { useState } from 'react'
+import Order from './pages/Order'
 
 function App() {
+  const [order, setOrder] = useState(null)
 
   return (
     <>
@@ -21,7 +24,8 @@ function App() {
             <Route path='/contact' element={<Contact/>}  />
             <Route path='/about' element={<About/>}  />
             <Route path='/cart' element={<Cart/>}  />
-            <Route path='/checkout' element={<Checkout/>}  />
+            <Route path='/checkout' element={<Checkout setOrder={setOrder} />}  />
+            <Route path='/order' element={<Order order={order} />} />
           </Routes>
         <Footer />
       </BrowserRouter>
