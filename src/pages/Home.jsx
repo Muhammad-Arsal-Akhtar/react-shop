@@ -5,7 +5,7 @@ import InfoSection from "../components/InfoSection";
 import CategorySection from "../components/CategorySection";
 import { useSelector, useDispatch } from "react-redux";
 import { ProductCard } from "../components/ProductCard";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { setProducts } from "../redux/productSlice";
 import { homeProduct } from "../assets/sampleData";
 import ShopSection from "../components/ShopSection";
@@ -19,7 +19,6 @@ const Home = () => {
   useEffect(() => {
     dispatch(setProducts(homeProduct))
   }, [])
-
 
   return (
     <>
@@ -57,9 +56,8 @@ const Home = () => {
           </div>
         </div>
       </section>
-      
-      <ShopSection />      
 
+      <ShopSection />
     </>
   );
 };

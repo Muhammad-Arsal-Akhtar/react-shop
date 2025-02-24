@@ -107,7 +107,9 @@ const Cart = () => {
               </div>
             </div>
           </div>
-          <Modal isOpen={isOpen} setIsOpen={setIsOpen} ChangeAddress={<ChangeAddress changeAddress={changeAddress} setIsOpen={setIsOpen} />} />
+          <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
+                <ChangeAddress changeAddress={changeAddress} setIsOpen={setIsOpen} />
+          </Modal>
         </div>
 
 
