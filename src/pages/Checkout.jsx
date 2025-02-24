@@ -331,7 +331,7 @@ const Checkout = ({ setOrder }) => {
                   <span className="font-semibold">Total</span>
                   <span className="font-semibold">${productsInCart.totalPrice}</span>
                 </div>
-                <button onClick={() => handleOrder()} className="bg-red-500 text-white py-2 px-4 rounded-lg mt-4 w-full">
+                <button onClick={() => handleOrder()} className="bg-red-500 text-white py-2 px-4 rounded-lg mt-4 w-full hover:cursor-pointer">
                   Place Order
                 </button>
               </div>
