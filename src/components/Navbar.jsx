@@ -5,8 +5,13 @@ import { useSelector } from "react-redux";
 import Login from "../components/Login";
 import Register from "../components/Register";
 import Modal from "../components/Modal";
+import { useNavigate } from "react-router";
+import { useDispatch } from "react-redux";
+import { getSearchedProducts } from "../redux/productSlice";
 
 const Navbar = () => {
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
   const [search, setSearch] = useState("");
 
   const productInCartCount = useSelector(state => state.cart.productsInCart)
@@ -14,6 +19,10 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [isLogin, setIsLogin] = useState(false)
 
+  const handleSearch = () => {
+    dispatch(getSearchedProducts(search))
+    navigate('/filter-data')
+  }
 
   return (
     <>
@@ -37,12 +46,13 @@ const Navbar = () => {
                 className="w-full px-4 py-2 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-300"
               />
               <svg
-                className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-500"
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-500 hover:cursor-pointer"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
+                onClick={() => handleSearch()}
               >
                 <path
                   strokeLinecap="round"
@@ -65,11 +75,11 @@ const Navbar = () => {
               </button>
 
               {/* Login Button */}
-              <Link href="#" className="px-4 py-2 text-gray-700 hover:text-blue-600" 
+              <Link href="#" className="px-4 py-2 text-gray-700 hover:text-blue-600"
                 onClick={() => {
                   setIsOpen(true)
-                  setIsLogin(true) 
-                 }}
+                  setIsLogin(true)
+                }}
               >
                 Login
               </Link>
@@ -80,8 +90,8 @@ const Navbar = () => {
                 className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700"
                 onClick={() => {
                   setIsOpen(true)
-                  setIsLogin(false) 
-                 }}
+                  setIsLogin(false)
+                }}
               >
                 Register
               </Link>
