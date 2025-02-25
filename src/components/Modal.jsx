@@ -1,5 +1,5 @@
 
-const Modal = ({ isOpen, setIsOpen, children }) => {
+const Modal = ({ isOpen, setIsOpen, headerContent, children }) => {
   return (
     <>
       {/* Main Modal */}
@@ -10,11 +10,11 @@ const Modal = ({ isOpen, setIsOpen, children }) => {
           aria-hidden="true"
           className="fixed inset-0 z-50 flex justify-center items-center bg-black bg-opacity-50"
         >
-          <div className="relative p-4 w-full max-w-2xl bg-white rounded-lg shadow-md">
+          <div className="relative p-4 w-full max-w-md bg-white rounded-lg shadow-md">
               {/* Modal Header */}
               <div className="flex items-center justify-between p-4 border-b">
                 <h3 className="text-xl font-semibold text-gray-900">
-                  Change Address
+                  {headerContent ?? 'Form'}
                 </h3>
                 <button
                   type="button"

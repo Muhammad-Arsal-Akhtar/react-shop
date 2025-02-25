@@ -1,5 +1,7 @@
 
-const Login = () => {
+import Register from "./Register"
+
+const Login = ({setIsLogin}) => {
     return (
         <form className="max-w-sm mx-auto">
             <div className="mb-5">
@@ -40,10 +42,17 @@ const Login = () => {
             </div>
             <button
                 type="submit"
-                className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                className="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800 hover:cursor-pointer"
             >
                 Submit
             </button>
+
+            <div className="flex items-start justify-center mt-5">
+                <div className="flex items-center h-5">
+                    <p className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Don't have Account? <a className="text-red-600 hover:cursor-pointer" onClick={() => setIsLogin(false)}>Sign Up</a></p>
+                </div>
+            </div>
+
         </form>
     )
 }

@@ -11,6 +11,7 @@ const Navbar = () => {
 
   const productInCartCount = useSelector(state => state.cart.productsInCart)
 
+  const [isOpen, setIsOpen] = useState(false)
   const [isLogin, setIsLogin] = useState(false)
 
 
@@ -64,7 +65,12 @@ const Navbar = () => {
               </button>
 
               {/* Login Button */}
-              <Link href="#" className="px-4 py-2 text-gray-700 hover:text-blue-600" onClick={() => setIsLogin(true)}>
+              <Link href="#" className="px-4 py-2 text-gray-700 hover:text-blue-600" 
+                onClick={() => {
+                  setIsOpen(true)
+                  setIsLogin(true) 
+                 }}
+              >
                 Login
               </Link>
 
@@ -72,6 +78,10 @@ const Navbar = () => {
               <Link
                 href="#"
                 className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700"
+                onClick={() => {
+                  setIsOpen(true)
+                  setIsLogin(false) 
+                 }}
               >
                 Register
               </Link>
@@ -97,8 +107,8 @@ const Navbar = () => {
       </nav>
 
 
-      <Modal isOpen={isLogin} setIsOpen={setIsLogin}>
-        {isLogin ? <Login /> : <Register />}
+      <Modal isOpen={isOpen} setIsOpen={setIsOpen} headerContent={isLogin ? 'Login' : 'Register'}>
+        {isLogin ? <Login setIsLogin={setIsLogin} /> : <Register setIsLogin={setIsLogin} />}
       </Modal>
     </>
   );
