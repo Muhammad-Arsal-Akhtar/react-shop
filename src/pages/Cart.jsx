@@ -107,7 +107,7 @@ const Cart = () => {
               </div>
             </div>
           </div>
-          <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
+          <Modal isOpen={isOpen} setIsOpen={setIsOpen} headerContent="Change Address">
                 <ChangeAddress changeAddress={changeAddress} setIsOpen={setIsOpen} />
           </Modal>
         </div>

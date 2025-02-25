@@ -18,7 +18,7 @@ export const cartSlice = createSlice({
 
             if (itemObjectExist) {
                 itemObjectExist.quantity++
-                itemObjectExist.price = parseFloat(itemObjectExist.price) + parseFloat(newItem.price)
+                itemObjectExist.price = Number(Number(itemObjectExist.price) + Number(newItem.price)).toFixed(2)
             } else {
                 state.productsInCart.push({
                     id: newItem.id,
@@ -30,7 +30,7 @@ export const cartSlice = createSlice({
                 })
             }
 
-            state.totalPrice += parseFloat(newItem.price);
+            state.totalPrice = Number(Number(state.totalPrice) + Number(newItem.price)).toFixed(2);
             state.totalQuantity++;
         },
 
