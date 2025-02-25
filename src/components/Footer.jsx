@@ -18,31 +18,31 @@ const Footer = () => {
         <div className="w-full sm:w-1/6 px-4 mb-8 text-center">
           <h3 className="text-lg font-semibold mb-4">Shop</h3>
           <ul>
-            <li><a href="/shop.html" className="hover:text-primary">Shop</a></li>
-            <li><a href="/single-product-page.html" className="hover:text-primary">Women</a></li>
-            <li><a href="/shop.html" className="hover:text-primary">Men</a></li>
-            <li><a href="/single-product-page.html" className="hover:text-primary">Shoes</a></li>
-            <li><a href="/single-product-page.html" className="hover:text-primary">Accessories</a></li>
+            <li><Link to="/shop" className="hover:text-red-500 hover:cursor-pointer">Shop</Link></li>
+            <li><a  className="hover:text-red-500 hover:cursor-pointer">Women</a></li>
+            <li><a className="hover:text-red-500 hover:cursor-pointer">Men</a></li>
+            <li><a  className="hover:text-red-500 hover:cursor-pointer">Shoes</a></li>
+            <li><a  className="hover:text-red-500 hover:cursor-pointer">Accessories</a></li>
           </ul>
         </div>
         
         <div className="w-full sm:w-1/6 px-4 mb-8 text-center">
           <h3 className="text-lg font-semibold mb-4">Pages</h3>
           <ul>
-            <li><Link to="/" className="hover:text-primary">Home</Link></li>
-            <li><Link to="/shop" className="hover:text-primary">Shop</Link></li>
-            <li><Link to="/contact" className="hover:text-primary">Contact</Link></li>
-            <li><Link to="/about" className="hover:text-primary">About</Link></li>
-            <li><Link to="/cart" className="hover:text-primary">Cart</Link></li>
+            <li><Link to="/" className="hover:text-red-500 hover:cursor-pointer">Home</Link></li>
+            <li><Link to="/shop" className="hover:text-red-500 hover:cursor-pointer">Shop</Link></li>
+            <li><Link to="/contact" className="hover:text-red-500 hover:cursor-pointer">Contact</Link></li>
+            <li><Link to="/about" className="hover:text-red-500 hover:cursor-pointer">About</Link></li>
+            <li><Link to="/cart" className="hover:text-red-500 hover:cursor-pointer">Cart</Link></li>
           </ul>
         </div>
         
         <div className="w-full sm:w-1/6 px-4 mb-8 text-center">
           <h3 className="text-lg font-semibold mb-4">Account</h3>
           <ul>
-            <li><a href="/cart.html" className="hover:text-primary">Cart</a></li>
-            <li><a href="/register.html" className="hover:text-primary">Registration</a></li>
-            <li><a href="/register.html" className="hover:text-primary">Login</a></li>
+            <li><Link to="/cart" className="hover:text-red-500 hover:cursor-pointer">Cart</Link></li>
+            <li><a className="hover:text-red-500 hover:cursor-pointer">Registration</a></li>
+            <li><a className="hover:text-red-500 hover:cursor-pointer">Login</a></li>
           </ul>
         </div>
        
