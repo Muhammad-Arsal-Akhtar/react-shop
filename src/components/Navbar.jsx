@@ -43,7 +43,7 @@ const Navbar = () => {
                 placeholder="Search..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="w-full px-4 py-2 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-300"
+                className="w-full px-4 py-2 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-red-300"
               />
               <svg
                 className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-500 hover:cursor-pointer"
@@ -75,7 +75,7 @@ const Navbar = () => {
               </button>
 
               {/* Login Button */}
-              <Link href="#" className="px-4 py-2 text-gray-700 hover:text-blue-600"
+              <Link href="#" className="px-4 py-2 text-gray-700 hover:text-red-600"
                 onClick={() => {
                   setIsOpen(true)
                   setIsLogin(true)
@@ -100,16 +100,16 @@ const Navbar = () => {
 
           {/* Navigation Links (Below Top Section) */}
           <div className="mt-3 flex justify-center space-x-8 border-t pt-3">
-            <Link to="/" className="text-gray-700 font-medium hover:text-blue-600">
+            <Link to="/" className="text-gray-700 font-medium hover:text-red-600">
               Home
             </Link>
-            <Link to="/shop" className="text-gray-700 font-medium hover:text-blue-600">
+            <Link to="/shop" className="text-gray-700 font-medium hover:text-red-600">
               Shop
             </Link>
-            <Link href="#" className="text-gray-700 font-medium hover:text-blue-600">
+            <Link href="#" className="text-gray-700 font-medium hover:text-red-600">
               Contact
             </Link>
-            <Link href="#" className="text-gray-700 font-medium hover:text-blue-600">
+            <Link href="#" className="text-gray-700 font-medium hover:text-red-600">
               About
             </Link>
           </div>

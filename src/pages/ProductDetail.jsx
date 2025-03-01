@@ -10,7 +10,7 @@ const ProductDetail = () => {
     useEffect(() => {
         const productExist = productsData.find((elem) => elem.id == param.id)
         setProduct(productExist)
-    },[])
+    }, [])
 
     return (
         <section className="relative mt-34">
@@ -43,7 +43,7 @@ const ProductDetail = () => {
                             <p className="font-medium text-lg leading-8 text-gray-900 mb-4">Bag Color</p>
                             <div className="flex items-center justify-start gap-3 md:gap-6 relative mb-6">
                                 {['#10B981', '#FBBF24', '#F43F5E', '#2563EB'].map((color, i) => (
-                                    <button key={i} className={`p-2.5 border border-gray-200 rounded-full transition-all duration-300 hover:border-${color === '#10B981' ? 'emerald' : color === '#FBBF24' ? 'amber' : color === '#F43F5E' ? 'red' : 'blue'}-500 focus-within:border-${color === '#10B981' ? 'emerald' : color === '#FBBF24' ? 'amber' : color === '#F43F5E' ? 'red' : 'blue'}-500`}>
+                                    <button key={i} className={`hover:cursor-pointer p-2.5 border border-gray-200 rounded-full transition-all duration-300 hover:border-${color === '#10B981' ? 'emerald' : color === '#FBBF24' ? 'amber' : color === '#F43F5E' ? 'red' : 'blue'}-500 focus-within:border-${color === '#10B981' ? 'emerald' : color === '#FBBF24' ? 'amber' : color === '#F43F5E' ? 'red' : 'blue'}-500`}>
                                         <svg width="20" height="20" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <circle cx="20" cy="20" r="20" fill={color} />
                                         </svg>
@@ -54,7 +54,7 @@ const ProductDetail = () => {
                                 <p className="font-medium text-lg leading-8 text-gray-900 mb-4">Bag Size</p>
                                 <div className="grid grid-cols-2 min-[400px]:grid-cols-3 gap-3">
                                     {['56 cm (S)', '67 cm (M)', '77 cm (L)'].map((size, i) => (
-                                        <button key={i} className="border border-gray-200 text-gray-900 text-lg py-2 rounded-full px-1.5 sm:px-6 w-full font-semibold whitespace-nowrap shadow-sm shadow-transparent transition-all duration-300 hover:shadow-gray-300 hover:bg-gray-50 hover:border-gray-300">
+                                        <button key={i} className="border border-gray-200 text-gray-900 text-lg py-2 rounded-full px-1.5 sm:px-6 w-full font-semibold whitespace-nowrap shadow-sm shadow-transparent transition-all duration-300 hover:shadow-gray-300 hover:bg-gray-50 hover:border-gray-300 hover:cursor-pointer">
                                             {size}
                                         </button>
                                     ))}
@@ -62,20 +62,27 @@ const ProductDetail = () => {
                             </div>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                                 <div className="flex items-center justify-center w-full">
-                                    <button className="group py-4 px-6 border border-gray-400 rounded-l-full shadow-sm shadow-transparent transition-all duration-500 hover:shadow-gray-300 hover:bg-gray-50">
+                                    <button className="group py-4 px-6 border border-gray-400 rounded-l-full shadow-sm shadow-transparent transition-all duration-500 hover:shadow-gray-300 hover:bg-gray-50 hover:cursor-pointer">
                                         <svg className="stroke-gray-700 transition-all duration-500 group-hover:stroke-black" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M16.5 11H5.5" stroke="" strokeWidth="1.6" strokeLinecap="round" />
                                         </svg>
                                     </button>
-                                    <input type="text" className="font-semibold text-gray-900 text-lg py-[13px] px-6 w-full lg:max-w-[118px] border-y border-gray-400 bg-transparent placeholder:text-gray-900 text-center hover:bg-gray-50 focus-within:bg-gray-50 outline-0" placeholder="1" />
-                                    <button className="group py-4 px-6 border border-gray-400 rounded-r-full shadow-sm shadow-transparent transition-all duration-500 hover:shadow-gray-300 hover:bg-gray-50">
+                                    <input
+                                        type="number"
+                                        className="appearance-none font-semibold text-gray-900 text-lg py-[13px] px-6 w-full lg:max-w-[118px] border-y border-gray-400 bg-transparent placeholder:text-gray-200 text-center hover:bg-gray-50 focus-within:bg-gray-50 outline-0
+  [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none [&]:moz-appearance-textfield"
+
+                                        placeholder="quantity"
+                                        min="1"
+                                    />
+                                    <button className="group py-4 px-6 border border-gray-400 rounded-r-full shadow-sm shadow-transparent transition-all duration-500 hover:shadow-gray-300 hover:bg-gray-50 hover:cursor-pointer">
                                         <svg className="stroke-gray-700 transition-all duration-500 group-hover:stroke-black" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M11 5.5V16.5M16.5 11H5.5" stroke="" strokeWidth="1.6" strokeLinecap="round" />
                                         </svg>
                                     </button>
                                 </div>
-                                <button className="group py-4 px-5 rounded-full bg-indigo-50 text-indigo-600 font-semibold text-lg w-full flex items-center justify-center gap-2 shadow-sm shadow-transparent transition-all duration-500 hover:bg-indigo-100 hover:shadow-indigo-200">
-                                    <svg className="stroke-indigo-600 transition-all duration-500" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <button className="group py-4 px-5 rounded-full bg-red-50 text-red-600 font-semibold text-lg w-full flex items-center justify-center gap-2 shadow-sm shadow-transparent transition-all duration-500 hover:bg-red-100 hover:shadow-red-200 hover:cursor-pointer">
+                                    <svg className="stroke-red-600 transition-all duration-500" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M10.7394 17.875C10.7394 18.6344 10.1062 19.25 9.32511 19.25C8.54402 19.25 7.91083 18.6344 7.91083 17.875M16.3965 17.875C16.3965 18.6344 15.7633 19.25 14.9823 19.25C14.2012 19.25 13.568 18.6344 13.568 17.875M4.1394 5.5L5.46568 12.5908C5.73339 14.0221 5.86724 14.7377 6.37649 15.1605C6.88573 15.5833 7.61377 15.5833 9.06984 15.5833H15.2379C16.6941 15.5833 17.4222 15.5833 17.9314 15.1605C18.4407 14.7376 18.5745 14.0219 18.8421 12.5906L19.3564 9.84059C19.7324 7.82973 19.9203 6.8243 19.3705 6.16215C18.8207 5.5 17.7979 5.5 15.7522 5.5H4.1394ZM4.1394 5.5L3.66797 2.75" stroke="" strokeWidth="1.6" strokeLinecap="round" />
                                     </svg>
                                     Add to cart
@@ -87,7 +94,7 @@ const ProductDetail = () => {
                     {/* Product Images */}
                     <div className="">
                         <div className="mb-6">
-                        {/* "https://pagedone.io/asset/uploads/1700471851.png" */}
+                            {/* "https://pagedone.io/asset/uploads/1700471851.png" */}
                             <img src={product.imageUrl} alt="Yellow Travel Bag" className="mx-auto object-cover w-130 h-130" />
                         </div>
                     </div>
