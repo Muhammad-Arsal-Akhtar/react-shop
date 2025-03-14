@@ -25,10 +25,10 @@ const Home = () => {
       <section className="flex flex-col md:flex-row items-center justify-between p-6 md:p-12 bg-gray-100 mt-16">
         {/* Categories */}
         <div className="w-full md:w-1/4 space-y-4 pt-10">
-          <h2 className="text-xl font-bold">Shop by Categories</h2>
-          <ul className="space-y-2">
+          <h2 className="text-3xl font-bold text-red-500 text-center">Shop by Categories</h2>
+          <ul className="space-y-2 text-center">
             {Categories.map((category, index) => (
-              <li key={index} className="p-2 bg-white shadow rounded-lg cursor-pointer hover:bg-gray-200">{category}</li>
+              <li key={index} className="p-2 bg-white shadow rounded-lg cursor-pointer hover:bg-red-300 hover:text-white">{category}</li>
             ))}
 
           </ul>
