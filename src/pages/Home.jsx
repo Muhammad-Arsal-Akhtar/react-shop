@@ -48,7 +48,7 @@ const Home = () => {
 
       <section id="popular-products" className="pt-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold mb-10">Popular products</h2>
+          <h2 className="font-bold mb-14 text-center text-3xl leading-[1.2] text-dark dark:text-white sm:text-4xl md:text-[40px]">Popular products</h2>
           <div className="flex flex-wrap -mx-4">
             {productData.products.map((elem, index) => (
               <ProductCard key={index} productDetails={elem} />
